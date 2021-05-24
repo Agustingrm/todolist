@@ -1,0 +1,80 @@
+body {
+    margin: 0px;
+    font-family: 'Basic', sans-serif;
+}
+
+#main {
+    display: flex;
+    height: calc(100vh - 70px);
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    width: 100vw;
+    height: 70px;
+    font-size: 40px;
+    font-weight: 200;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Viga', sans-serif;
+}
+
+#leftBar {
+    flex: 1;
+    background-color: red;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#projectList {
+    flex:4;
+    margin: 0;
+    background-color: blue;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 10px;
+}
+
+li{
+    list-style-type: none;
+    background-color: aliceblue;
+    height: 30px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    padding: 5px 10px 0 10px;
+    box-sizing: border-box;
+}
+
+li p {
+    margin: 0px;
+}
+
+.listLeft {
+    float: left;
+}
+
+.listRight {
+    float: right;
+}
+
+#buttonTaskContainer, #buttonProjectContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#addTaskButton, #addProjectButton {
+    font-size: 25px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color:rgba(0, 0, 0, 0,2);
+}
