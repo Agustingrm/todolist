@@ -78,3 +78,12 @@ li p {
     border-radius: 50%;
     background-color:rgba(0, 0, 0, 0,2);
 }
+
+#taskInputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.warningMessage {
+    margin: 0;
+}
