@@ -28,6 +28,10 @@ h1 {
     box-sizing: border-box;
 }
 
+#byNameDiv p {
+    margin-top: 0;
+}
+
 #projectList {
     flex:4;
     margin: 0;
