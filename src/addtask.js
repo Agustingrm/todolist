@@ -1,3 +1,5 @@
+import { makeTaskInputAppear } from "./makeTaskInputAppear"
+
 const addTask = () => {
     const projectList = document.getElementById('projectList')
 
@@ -80,6 +82,7 @@ const addTask = () => {
     cancelButtonTask.setAttribute('id','cancelButtonTask')
     cancelButtonTask.innerHTML = 'Cancel'
     buttonDivTask.appendChild(cancelButtonTask)
+
 }
 
 export {addTask}

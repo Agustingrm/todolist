@@ -1,14 +1,15 @@
 import { plusButtonProject } from "./plusbuttonproject"
 import { plusButtonTask } from "./plusbuttontask"
-import {eachProject} from './makeTaskInputAppear'
+import {taskStorage} from './makeTaskInputAppear'
 
 const projectVisualization = () => {
     const projectList = document.getElementById('projectList')
+    let title = document.getElementById('projectTitle').value
 
     const h2 = document.createElement('h2')
     projectList.appendChild(h2)
 
-    for (var key in eachProject){
+    for (var key in taskStorage){
         
     const ul = document.createElement('ul')
     ul.setAttribute('id','projectUL')
@@ -17,13 +18,13 @@ const projectVisualization = () => {
     let li = document.createElement('li')
     ul.appendChild(li)
 
-    var value = eachProject[key]
+    const projectName = document.getElementsByTagName('h2')[0].textContent
 
-    console.log(value)
+    var value = taskStorage[key]
 
     let listLeftP = document.createElement('p')
     listLeftP.classList.add('listLeft')
-    listLeftP.innerHTML = value['title']
+    listLeftP.innerHTML = value
     li.appendChild(listLeftP)
 
     let listRightP = document.createElement('p')
@@ -34,6 +35,7 @@ const projectVisualization = () => {
     }
     plusButtonTask()
     plusButtonProject()
+    makeTaskInputAppear()
 }
 
 export {projectVisualization}

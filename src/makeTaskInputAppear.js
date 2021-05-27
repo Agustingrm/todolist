@@ -1,7 +1,6 @@
 import { addTask } from './addtask'
 import { plusButtonTask } from './plusbuttontask'
-import {eachProject} from './index'
-import {projects} from './index'
+import {taskStorage} from './index'
 import { projectVisualization } from './projectvisualization'
 
 const makeTaskInputAppear = () => {
@@ -9,6 +8,8 @@ const makeTaskInputAppear = () => {
     let buttonTaskContainer = document.getElementById('buttonTaskContainer')
     let addTaskButton = document.getElementById('addTaskButton')
 
+    let prop = ''
+    
         addTaskButton.addEventListener('click',()=> {
         buttonTaskContainer.parentNode.removeChild(buttonTaskContainer)
         addTask()
@@ -17,8 +18,8 @@ const makeTaskInputAppear = () => {
         const acceptButtonTask = document.getElementById('acceptButtonTask')
 
         acceptButtonTask.addEventListener('click',()=>{
-        const toDoCreator = (title,priority,dueDate,description) => {
-            return {title,description,dueDate,priority}
+        const toDoCreator = (title,dueDate,priority,description,project) => {
+            return {title,description,dueDate,priority,project}
         }
 
         const asignTask = () => {
@@ -26,13 +27,12 @@ const makeTaskInputAppear = () => {
             let dueDate = document.getElementById('dueDate').value
             let projectPriority = document.getElementById('projectPriority').value
             let projectDescription = document.getElementById('projectDescription').value
-            let project = document.getElementsByTagName('h2')[0].textContent
+            let projectName = document.getElementsByTagName('h2')[0].textContent
     
-            let prop = toDoCreator(title,projectPriority,dueDate,projectDescription)
-            eachProject["'"+project+"'"] = prop
-            console.log(eachProject)
-            console.log(eachProject["'"+project+"'"])
-
+            prop = toDoCreator(title,projectPriority,dueDate,projectDescription,projectName)
+            taskStorage.push(prop)
+            console.log(taskStorage)
+            return prop
         }
         asignTask()
         projectVisualization()
@@ -52,7 +52,7 @@ const makeTaskInputAppear = () => {
             makeTaskInputAppear()
         })
     })
-
+return taskStorage
 }
 
-export {makeTaskInputAppear, eachProject}
+export {makeTaskInputAppear, taskStorage}
