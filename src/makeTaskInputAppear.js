@@ -7,7 +7,6 @@ const makeTaskInputAppear = () => {
     
     let buttonTaskContainer = document.getElementById('buttonTaskContainer')
     let addTaskButton = document.getElementById('addTaskButton')
-
     let prop = ''
     
         addTaskButton.addEventListener('click',()=> {

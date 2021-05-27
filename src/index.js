@@ -1,5 +1,4 @@
 import mainFrame from './mainframe'
-// import { projectVisualization } from './projectvisualization'
 import { makeProjectInputsAppear } from './makeProjectInputsAppear'
 import { makeTaskInputAppear } from './makeTaskInputAppear'
 import { plusButtonTask } from './plusbuttontask'
@@ -11,7 +10,7 @@ let taskStorage = []
 mainFrame()
 plusButtonProject()
 makeProjectInputsAppear()
-// makeTaskInputAppear()
+
 
 const h2 = document.createElement('h2')
 h2.innerHTML = 23123
