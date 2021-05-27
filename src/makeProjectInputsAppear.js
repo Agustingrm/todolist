@@ -1,6 +1,8 @@
 import {projects} from './index'
 import { addProject } from './addproject'
 import { plusButtonProject } from './plusbuttonproject'
+import { plusButtonTask } from './plusbuttontask'
+import { makeTaskInputAppear } from './makeTaskInputAppear'
 
 
 const makeProjectInputsAppear = () => {
@@ -56,6 +58,8 @@ const makeProjectInputsAppear = () => {
                     project.addEventListener('click',()=>{
                         const h2 = document.getElementsByTagName('h2')[0]
                         h2.innerHTML = projects[i]
+                        plusButtonTask()
+                        makeTaskInputAppear()
                     })
                 }
 

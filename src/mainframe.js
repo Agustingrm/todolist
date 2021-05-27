@@ -14,14 +14,6 @@ const mainFrame = () => {
     leftBar.setAttribute('id','leftBar')
     mainDiv.appendChild(leftBar);
 
-    const allProjectsDiv = document.createElement('div')
-    allProjectsDiv.setAttribute('id','allProjectsDiv')
-    leftBar.appendChild(allProjectsDiv)
-
-    const allProjectsP = document.createElement('p')
-    allProjectsP.innerHTML = 'All Projects'
-    allProjectsDiv.appendChild(allProjectsP)
-
     const byNameDiv = document.createElement('div')
     byNameDiv.setAttribute('id','byNameDiv')
     leftBar.appendChild(byNameDiv)
@@ -33,6 +25,14 @@ const mainFrame = () => {
     const projectList = document.createElement('div')
     projectList.setAttribute('id','projectList')
     mainDiv.appendChild(projectList)
+
+    const h2Container = document.createElement('div')
+    h2Container.setAttribute('id','h2Container')
+    projectList.appendChild(h2Container)
+
+    const ul = document.createElement('ul')
+    ul.setAttribute('id','projectUL')
+    projectList.appendChild(ul)
 
     return project
 }

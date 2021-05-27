@@ -11,12 +11,11 @@ mainFrame()
 plusButtonProject()
 makeProjectInputsAppear()
 
-
+const h2Container = document.getElementById('h2Container')
 const h2 = document.createElement('h2')
-h2.innerHTML = 23123
-projectList.appendChild(h2)
+h2Container.appendChild(h2)
 
-if (h2 != ''){
+if (h2.value != undefined){
     plusButtonTask()
     makeTaskInputAppear()
 }

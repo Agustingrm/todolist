@@ -10,34 +10,39 @@ const makeTaskInputAppear = () => {
     let prop = ''
     
         addTaskButton.addEventListener('click',()=> {
-        buttonTaskContainer.parentNode.removeChild(buttonTaskContainer)
-        addTask()
+            buttonTaskContainer.parentNode.removeChild(buttonTaskContainer)
+            addTask()
+            
+            //Acept Button Logic
+            const acceptButtonTask = document.getElementById('acceptButtonTask')
+
+            acceptButtonTask.addEventListener('click',()=>{
+            const toDoCreator = (title,dueDate,priority,description,project) => {
+                return {title,description,dueDate,priority,project}
+            }
+
+            const asignTask = () => {
+                let title = document.getElementById('projectTitle').value
+                let dueDate = document.getElementById('dueDate').value
+                let projectPriority = document.getElementById('projectPriority').value
+                let projectDescription = document.getElementById('projectDescription').value
+                let projectName = document.getElementsByTagName('h2')[0].textContent
         
-        //Acept Button Logic
-        const acceptButtonTask = document.getElementById('acceptButtonTask')
+                prop = toDoCreator(title,projectPriority,dueDate,projectDescription,projectName)
+                taskStorage.push(prop)
+                return prop
+            }
+            asignTask()
+            projectVisualization()
+            
+            let taskInputs = document.getElementById('taskInputs')
+            let buttonDivTask = document.getElementById('buttonDivTask')
+            
+            taskInputs.parentNode.removeChild(taskInputs)
+            buttonDivTask.parentNode.removeChild(buttonDivTask)
 
-        acceptButtonTask.addEventListener('click',()=>{
-        const toDoCreator = (title,dueDate,priority,description,project) => {
-            return {title,description,dueDate,priority,project}
-        }
-
-        const asignTask = () => {
-            let title = document.getElementById('projectTitle').value
-            let dueDate = document.getElementById('dueDate').value
-            let projectPriority = document.getElementById('projectPriority').value
-            let projectDescription = document.getElementById('projectDescription').value
-            let projectName = document.getElementsByTagName('h2')[0].textContent
-    
-            prop = toDoCreator(title,projectPriority,dueDate,projectDescription,projectName)
-            taskStorage.push(prop)
-            console.log(taskStorage)
-            return prop
-        }
-        asignTask()
-        projectVisualization()
-    })
-
-
+            makeTaskInputAppear()
+        })
 
         //Cancel Button Logic
         let cancelButtonTask = document.getElementById('cancelButtonTask')
