@@ -45,6 +45,13 @@ const makeProjectInputsAppear = () => {
                 warningMessage.parentNode.removeChild(warningMessage)
 
                 projects.push(projectInput.value)
+
+                function saveInLocalStorage(){
+                    localStorage.setItem('projects',JSON.stringify(projects));
+                }
+
+                saveInLocalStorage()
+
                 plusButtonProject()        
                 makeProjectInputsAppear()
 
@@ -91,6 +98,7 @@ const makeProjectInputsAppear = () => {
                         deleteButton.classList.add('deleteButton')
                         byNameDiv.appendChild(deleteButton)
 
+                        //Delete Button in project Bar
                         deleteButton.addEventListener('click',()=>{
                             for (let j = (taskStorage.length-1);j>-1;j--){
                                 if(taskStorage[j].project == projects[i]){
@@ -156,6 +164,7 @@ const makeProjectInputsAppear = () => {
                     }
                 }
                 createProjects()
+
             }
         })
 

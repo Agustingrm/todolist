@@ -32,6 +32,12 @@ const makeTaskInputAppear = () => {
         
                 prop = toDoCreator(title,projectPriority,dueDate,projectDescription,projectName)
                 taskStorage.push(prop)
+
+                function saveInLocalStorageTaskStorage(){
+                    localStorage.setItem('taskStorage',JSON.stringify(taskStorage));
+                }
+
+                saveInLocalStorageTaskStorage()
                 return prop
             }
             let warningMessage1 = document.createElement('p')
@@ -59,9 +65,7 @@ const makeTaskInputAppear = () => {
                 return
             }
             else if (document.getElementById('dueDate').value == ""){
-                console.log(wm1.innerHTML)
                 if (wm1.textContent == "You cant leave the title empty"){
-                    console.log('aa')
                     wm1.parentNode.removeChild(wm1)
                 }
                 wm2.innerHTML = "You cant leave the Date empty"
@@ -90,7 +94,10 @@ const makeTaskInputAppear = () => {
                 buttonDivTask.parentNode.removeChild(buttonDivTask)
 
                 makeTaskInputAppear()
+
+                
             }
+            
         })
 
         //Cancel Button Logic

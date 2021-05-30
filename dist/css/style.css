@@ -26,7 +26,7 @@ h1 {
     background-color: rgb(58, 105, 236);
     padding: 20px;
     box-sizing: border-box;
-    max-width: 200px;
+    max-width: 160px;
 }
 
 #byNameDiv p {
@@ -43,6 +43,8 @@ h1 {
 
 h2 {
     margin-top: 0;
+    word-wrap: break-word;
+    overflow:hidden;
 }
 
 ul {
@@ -52,7 +54,7 @@ ul {
 li{
     list-style-type: none;
     background-color: aliceblue;
-    height: 30px;
+    height: 100%;
     margin-bottom: 2px;
     border-radius: 5px;
     padding: 5px 10px 0 10px;
@@ -63,12 +65,17 @@ li p {
     margin: 0px;
 }
 
-.listLeft {
+.listLeft, .listLeftPRow2{
     float: left;
 }
 
-.listRight {
+.listRight, .listRightPRow2, .deleteButtonTasks {
     float: right;
+}
+
+.deleteButtonTasks {
+    color: red;
+    font-size: 10px;
 }
 
 #buttonTaskContainer, #buttonProjectContainer {
@@ -145,4 +152,18 @@ input, select {
 }
 .projectsLeftBarDiv {
     height: 20px;
+}
+
+.row1Div, .row2Div {
+    height: 25px;
+    padding-top: 2px;
+    box-sizing: border-box;
+
+
+}
+
+.row3Div {
+    height: inherit;
+    padding-top: 2px;
+    word-wrap: break-word
 }
