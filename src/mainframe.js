@@ -19,6 +19,7 @@ const mainFrame = () => {
     leftBar.appendChild(byNameDiv)
 
     const byNameP = document.createElement('p')
+    byNameP.setAttribute('id','projectByName')
     byNameP.innerHTML = 'Project by Name'
     byNameDiv.appendChild(byNameP)
 

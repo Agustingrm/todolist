@@ -32,14 +32,13 @@ const projectVisualization = () => {
 
             }
         }
-
+        
         let buttonTask = document.getElementById('addProjectButton')
-
         plusButtonTask()
         if (buttonTask == false){
         plusButtonProject()
         }
-    makeProjectInputsAppear()
+    // makeProjectInputsAppear()
 }
 
 export {projectVisualization}

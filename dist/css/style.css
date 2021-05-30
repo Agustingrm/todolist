@@ -23,9 +23,10 @@ h1 {
 
 #leftBar {
     flex: 1;
-    background-color: red;
+    background-color: rgb(58, 105, 236);
     padding: 20px;
     box-sizing: border-box;
+    max-width: 200px;
 }
 
 #byNameDiv p {
@@ -35,7 +36,7 @@ h1 {
 #projectList {
     flex:4;
     margin: 0;
-    background-color: blue;
+    background-color: rgb(193, 193, 214);
     padding: 20px;
     box-sizing: border-box;
 }
@@ -90,4 +91,58 @@ li p {
 
 .warningMessage {
     margin: 0;
+}
+
+input, select {
+    border: 0px;
+    border-radius: 5px;
+    height: 20px;
+    margin: 0 0 1px 0;
+    width: 100%;
+    padding: 1px 2px;
+    box-sizing: border-box;
+}
+
+#leftBar input {
+    min-width: 120px
+}
+
+#byNameDiv p {
+    width: calc(100% - 16px);
+    float: left;
+    word-wrap: break-word
+}
+
+.deleteButton {
+    float: right;
+    width: 15.8px;
+    padding-left: 3px;
+    padding-top: 2px;
+    box-sizing: border-box;
+    font-size: 8px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.deleteButton:hover {
+    background-color: blue;
+}
+
+#byNameDiv #projectByName {
+    width: inherit;
+    display: block;
+    float: none;
+    text-align: center;
+}
+
+.projectsLeftBarDiv {
+    display: inline;
+}
+
+#buttonProjectContainer{
+    clear: both;
+}
+.projectsLeftBarDiv {
+    height: 20px;
 }
